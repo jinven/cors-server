@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build-next": "next build",
-    "start-next": "next start",
-    "start": "node server",
+    "start": "next start",
+    "start-node": "node server",
     "build": "echo build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
