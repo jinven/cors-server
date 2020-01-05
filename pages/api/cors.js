@@ -2,6 +2,11 @@
 const request = require('request')
 
 export default async (req, res) => {
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    'Content-Type': 'application/json'
+  })
   if (req.method === 'POST' && req.body) {
     const url = 'https://github.com/login/oauth/access_token'
     // const options = {
@@ -28,11 +33,7 @@ export default async (req, res) => {
     }, (error, r, body) => {
       if (!error) {
         // res.send(body)
-        res.writeHead(200, {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-          'Content-Type': 'application/json'
-        }).end(body)
+        res.end(body)
       } else {
         res.json({ error })
       }
