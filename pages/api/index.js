@@ -1,6 +1,5 @@
 const request = require('request')
 export default async (req, res) => {
-  const a = req.query;
   res.writeHead(200, {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
